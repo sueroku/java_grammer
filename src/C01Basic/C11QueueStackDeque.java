@@ -53,6 +53,50 @@ public class C11QueueStackDeque {
 //        long endTime2 = System.currentTimeMillis();
 //        System.out.println("arraylist의 조회 :" + (endTime2-startTime2));
 
+
+
+
+
+        // LinkedList 와 ArrayList 시간 복잡도 비교
+        // LinkedList 의 add
+//        LinkedList<Integer> list1 = new LinkedList<>();
+//        long startTime = System.currentTimeMillis();
+//        for(int i = 0; i < 10000; i++){
+//            list1.add(0, 10);
+//        }
+//
+//        long endTime = System.currentTimeMillis();
+//        System.out.println("LikedList의 중간 삽입 : " + (endTime - startTime));
+//
+//        ArrayList<Integer> list2 = new ArrayList<>();
+//        long startTime2 = System.currentTimeMillis();
+//        for(int i = 0; i < 10000; i++){
+//            list2.add(0, 10);
+//        }
+//
+//        long endTime2 = System.currentTimeMillis();
+//        System.out.println("ArrayList의 중간 삽입 : " + (endTime2 - startTime2));
+//
+//        long startTime3 = System.currentTimeMillis();
+//        for(int i = 0; i < 10000; i++){
+//            list1.get(i);
+//        }
+//        long endTime3 = System.currentTimeMillis();
+//        System.out.println("LikedList의 조회 : " + (endTime3 - startTime3));
+//
+//        long startTime4 = System.currentTimeMillis();
+//        for(int i = 0; i < 10000; i++){
+//            list2.add(0, 10);
+//        }
+//
+//        long endTime4 = System.currentTimeMillis();
+//        System.out.println("ArrayList의 중간 삽입 : " + (endTime4 - startTime4));
+
+
+
+
+
+
 //        Queue<String> myQue = new LinkedList<>();
 //        myQue.add("문서1");
 //        myQue.add("문서2");
