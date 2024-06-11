@@ -3,7 +3,7 @@ package C01Basic;
 import java.util.*;
 import java.util.stream.Collectors;
 
-public class C09List {
+public class C08List {
     public static void main(String[] args) {
 ////        list 선언 방법
 ////        ArrayList<타입명> 변수명 = new ArrayList<타입명>();
@@ -88,6 +88,9 @@ public class C09List {
 //        System.out.println(list.contains(20));
 //
 ////        이중 리스트 (리스트 안에 리스트)
+        List<Integer> temp1 = new ArrayList<>();
+        List<List<Integer>> myList = new ArrayList<>();
+        myList.add(temp1); // 변수명은 딱히 필요없다. 즉 굳이 이렇게 할 필요 없음. 리스트안 배열도 마찬가지
 //        List<List<Integer>> myList = new ArrayList<>();
 //        myList.add(new ArrayList<>());
 //        myList.add(new ArrayList<>());
@@ -113,6 +116,7 @@ public class C09List {
 ////        방법1. collections.sort()
 //        Collections.sort((myList));
 //        Collections.sort(myList, Collections.reverseOrder());
+//        Collections.sort(myList, Comparator.reverseOrder());
 ////        방법2. 리스트객체.sort()
 //        myList.sort(Comparator.naturalOrder());
 //        myList.sort(Comparator.reverseOrder());
