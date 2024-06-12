@@ -11,7 +11,7 @@ public class C10Set {
 //        mySet.add("l");
 //        mySet.add("l");
 //        mySet.add("o");
-//        System.out.println(mySet);
+//        System.out.println(mySet); // 중복제거!!!!
 
 ////        프로그래머스 폰켓몬
 //        int[] nums = {3,1,2,3};
@@ -26,7 +26,7 @@ public class C10Set {
 //            answer = mySet.size();
 //        }
 //
-//        List<String> myList = new ArrayList<>();
+//        List<String> myList = new ArrayList<>(); // 나중에 스프링 리스트 친화적
 //        myList.add("tennis");
 //        myList.add("baseball");
 //        myList.add("baseball");
@@ -76,6 +76,7 @@ public class C10Set {
         int[] numbers = {5,0,2,7};
 
 
+//          정하님 감삼당
 //        import java.util.*;
 //        class Solution {
 //            public int[] solution(int[] numbers) {

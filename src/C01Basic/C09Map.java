@@ -105,7 +105,7 @@ public class C09Map {
 //        linkedMap.put("hello1",1);
 //        System.out.println(linkedMap);
 
-////        TreeMap : key를 통해 데이터를 정렬(최적화 logN)
+////        TreeMap : key를 통해 데이터를 정렬(최적화 nlogN)
 //        Map<String,Integer> treeMap = new TreeMap<>();
 //        treeMap.put("hello5",1);
 //        treeMap.put("hello4",1);
@@ -138,9 +138,6 @@ public class C09Map {
 //            answer[count] = a;
 //            count++;
 //        }
-
-
-
 
 
 
