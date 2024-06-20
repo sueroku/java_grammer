@@ -39,6 +39,9 @@ public class C0703JsonParsing1 {
     }
 }
 
+// 왜 getter 혹은 setter가 있어야 objectMapper가 read하는가
+// objectMapper 는 getter setter 메서드(이걸로 값을 세팅하는게 아니라) 명(예:getName의 name을 통해)을 통해 필드값을 유추
+// 실제 값의 setting은 reflection 이라는 기술을 통해 변수값에 할당
 class Student{
     private int id;
     private String name;

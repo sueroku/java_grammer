@@ -20,53 +20,56 @@ import java.util.regex.Pattern;
 // 2. 로그인 email, password 입력받아 service의 login 메서드 호출 -> service에서 해당 email user가 있는지 검증 (없으면 예외)
 
 public class AuthorController {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IllegalArgumentException{
         AuthorService authorService = new AuthorService();
         Scanner sc = new Scanner(System.in);
 
-        try {
-            while (true){
-                System.out.println("------------------------");
-                System.out.println("서비스를 시작합니다.\n 번호를 입력하십시오 1. 회원가입 2. 로그인 3. 종료");
-                int funcNum = Integer.parseInt(sc.nextLine());
-                if(funcNum==1){ // 회원가입
-                    System.out.println("이륾을 입력하십시오");
-                    String userName = sc.nextLine();
-                    System.out.println("이메일을 입력하십시오");
-                    String userEmail = sc.nextLine();
-                    boolean check = Pattern.matches("^[a-z0-9]+@[a-z]+.com$", userEmail);
-                    while (!check) {
-                        System.out.print("형식에 맞지 않습니다.\n이메일을 다시 입력해주십시오\n이메일형식 : hoho@hoho.com\n");
-                        userEmail = sc.nextLine();
-                        check = Pattern.matches("^[a-z0-9]+@[a-z]+.com$", userEmail);
-                    }
-                    System.out.println("비밀번호를 입력하십시오");
-                    String userPass = sc.nextLine();
-                    authorService.register(userName,userEmail,userPass);
-                } else if (funcNum==2) { // 로그인
-                    System.out.println("이메일을 입력하십시오");
-                    String userEmail = sc.nextLine();
-                    boolean check = Pattern.matches("^[a-z0-9]+@[a-z]+.com$", userEmail);
-                    while (!check) {
-                        System.out.print("형식에 맞지 않습니다,\n이메일을 다시 입력해주십시오\n이메일형식 : hoho@hoho.com\n");
-                        userEmail = sc.nextLine();
-                        check = Pattern.matches("^[a-z0-9]+@[a-z]+.com$", userEmail);
-                    }
-                    System.out.println("비밀번호를 입력하십시오");
-                    String userPass = sc.nextLine();
-                    authorService.login(userEmail,userPass);
-                } else if (funcNum==3) {
-                    System.out.println("서비스를 종료합니다.");
-                    break;
-                }else{
-                    System.out.println("번호를 올바르게 입력하십시오");
+        while (true){
+            System.out.println("------------------------");
+            System.out.println("서비스를 시작합니다.\n 번호를 입력하십시오 1. 회원가입 2. 로그인 3. 종료");
+            int funcNum = Integer.parseInt(sc.nextLine());
+            if(funcNum==1){ // 회원가입
+                System.out.println("이륾을 입력하십시오");
+                String userName = sc.nextLine();
+                System.out.println("이메일을 입력하십시오");
+                String userEmail = sc.nextLine();
+                boolean check = Pattern.matches("^[a-z0-9]+@[a-z]+.com$", userEmail);
+                while (!check) {
+                    System.out.print("형식에 맞지 않습니다.\n이메일을 다시 입력해주십시오\n이메일형식 : hoho@hoho.com\n");
+                    userEmail = sc.nextLine();
+                    check = Pattern.matches("^[a-z0-9]+@[a-z]+.com$", userEmail);
                 }
+                System.out.println("비밀번호를 입력하십시오");
+                String userPass = sc.nextLine();
+                try{authorService.register(userName,userEmail,userPass);}
+                catch (IllegalArgumentException e){
+                    System.out.println(e.getMessage());
+                    e.printStackTrace();
+                }
+            } else if (funcNum==2) { // 로그인
+                System.out.println("이메일을 입력하십시오");
+                String userEmail = sc.nextLine();
+                boolean check = Pattern.matches("^[a-z0-9]+@[a-z]+.com$", userEmail);
+                while (!check) {
+                    System.out.print("형식에 맞지 않습니다,\n이메일을 다시 입력해주십시오\n이메일형식 : hoho@hoho.com\n");
+                    userEmail = sc.nextLine();
+                    check = Pattern.matches("^[a-z0-9]+@[a-z]+.com$", userEmail);
+                }
+                System.out.println("비밀번호를 입력하십시오");
+                String userPass = sc.nextLine();
+                try {
+                    authorService.login(userEmail,userPass);
+                }catch (IllegalArgumentException e){
+                    System.out.println(e.getMessage());
+                    e.printStackTrace();
+                }
+            } else if (funcNum==3) {
+                System.out.println("서비스를 종료합니다.");
+                break;
+            }else{
+                System.out.println("번호를 올바르게 입력하십시오");
             }
-        }catch (IllegalArgumentException e){
-            System.out.println(e.getMessage());
-            e.printStackTrace();
         }
-
 
     }
 }

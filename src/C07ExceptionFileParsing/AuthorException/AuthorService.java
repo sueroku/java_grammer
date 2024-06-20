@@ -25,20 +25,20 @@ public class AuthorService {
         if(password.length()<=5){
             throw new IllegalArgumentException("비밀번호가 짧습니다.");
         }else if(authorRepository.findUserByEmail(email)){
-            throw new RuntimeException("이미 존재하는 이메일입니다.");
+            throw new IllegalArgumentException("이미 존재하는 이메일입니다.");
         }else {
             Author author = new Author(name,email,password);
             authorRepository.saveAuthor(author);
         }
     }
 
-    public void login(String email, String password)throws IllegalArgumentException{ // authorList 목록을 조회할 수 있게 repo에 만들기
+    public void login(String email, String password){ // authorList 목록을 조회할 수 있게 repo에 만들기
         if(authorRepository.correctByPasswordwWithEmail(email,password)){
             System.out.println("로그인에 성공하였습니다.");
         }else if(password.length()<=5){
             throw new IllegalArgumentException("비밀번호가 짧습니다.");
         }else {
-
+            throw new IllegalArgumentException("로그인에 실패하였습니다.");
         }
     }
 }

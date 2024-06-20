@@ -8,7 +8,7 @@ public class Library {
     public synchronized static void borrow(){
         if(bookCount>0){
             try {
-                Thread.sleep(30);
+                Thread.sleep(300);
             }catch (InterruptedException e){
                 e.printStackTrace();
             }

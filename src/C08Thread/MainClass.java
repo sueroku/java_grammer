@@ -15,7 +15,8 @@ public class MainClass {
 //        t3.start();
 //
 //        new Thread(new Thread2()).start();
-//        new Thread(()-> System.out.pr k intln("익명 Runnable객체 주입 후 실행 Thread")).start();
+
+//        new Thread(()-> System.out.println("익명 Runnable객체 주입 후 실행 Thread")).start();
 ////                                             run 메서드 구현
 
 ////        Thread 동시성 이슈 테스트
