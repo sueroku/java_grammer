@@ -18,7 +18,7 @@ public class BankController {
             System.out.println("입금하시려면 1번, 출금하시려면 2번");
             int number2 = Integer.parseInt(sc.nextLine());
             if(number == 1){
-                BankCardService bcs = new BankCardService();
+                BankService bcs = new BankCardService();
                 if(number2 == 1){
                     System.out.println("입금하실 금액을 입력해주세요");
                     int money = Integer.parseInt(sc.nextLine());

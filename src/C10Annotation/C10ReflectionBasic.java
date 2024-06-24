@@ -21,7 +21,7 @@ class Calculator{
     private String name;
     Calculator(){}
     Calculator(String name){
-        this.name = name.;
+        this.name = name;
     }
     public void sayHello(){
         System.out.println("My name is " + this.name);

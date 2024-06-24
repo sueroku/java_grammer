@@ -4,6 +4,9 @@ public class C0501InnerClass1 {
     public static void main(String[] args) {
         MemberInnerClass.StaticInnerClass m1 = new MemberInnerClass.StaticInnerClass();
         m1.display();
+
+        MemberInnerClass m2 = new MemberInnerClass();
+        m2.display();
     }
 }
 
@@ -16,7 +19,7 @@ class MemberInnerClass {
     }
 
     // static 내부 클래스
-    // 해당 클래스는 MemberInnerClass의 정적 멤버처럼 활용
+    // 해당 클래스는 MemberInnerClass의 정적 멤버(변수와 메서드)처럼 활용
     static class StaticInnerClass {
 
         int b;
